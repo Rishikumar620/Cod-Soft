@@ -1,2 +1,2 @@
 # Cod-Soft
-Daily-Work--TASK-- [Programs] 
+All code provided as tasks by CodSoft is documented and available here.
