@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .hero {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: radial-gradient(circle, #ffffff, #e0e0e0);
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .job {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .search-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        input[type="search"] {
+            width: 70%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            .hero h2 {
+                font-size: 20px;
+            }
+            .search-container input[type="search"] {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Job Portal</h1>
+    </header>
+
+    <nav>
+        <a href="#home" onclick="showSection('home')">Home</a>
+        <a href="#listings" onclick="showSection('listings')">Job Listings</a>
+        <a href="#detail" onclick="showSection('detail')">Job Detail</a>
+        <a href="#employer" onclick="showSection('employer')">Employer Dashboard</a>
+        <a href="#candidate" onclick="showSection('candidate')">Candidate Dashboard</a>
+        <a href="#application" onclick="showSection('application')">Apply</a>
+        <a href="#search" onclick="showSection('search')">Search</a>
+        <a href="#login" onclick="showSection('login')">Login</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Home Page -->
+        <div id="home" class="section">
+            <div class="hero">
+                <h2>Welcome to Job Portal</h2>
+            </div>
+            <h2>Featured Job Listings</h2>
+            <div class="job">
+                <h3><a href="#detail">Software Engineer at TechCorp</a></h3>
+                <p>Location: San Francisco, CA</p>
+                <p>Type: Full-time</p>
+            </div>
+            <div class="job">
+                <h3><a href="#detail">Marketing Manager at Marketify</a></h3>
+                <p>Location: New York, NY</p>
+                <p>Type: Part-time</p>
+            </div>
+        </div>
+
+        <!-- Job Listings Page -->
+        <div id="listings" class="section">
+            <h2>All Job Openings</h2>
+            <div class="job">
+                <h3><a href="#detail">UI/UX Designer at DesignPro</a></h3>
+                <p>Location: Austin, TX</p>
+                <p>Type: Contract</p>
+            </div>
+            <div class="job">
+                <h3><a href="#detail">Data Analyst at DataCorp</a></h3>
+                <p>Location: Seattle, WA</p>
+                <p>Type: Full-time</p>
+            </div>
+        </div>
+
+        <!-- Job Detail Page -->
+        <div id="detail" class="section">
+            <h2>Software Engineer at TechCorp</h2>
+            <p><strong>Location:</strong> San Francisco, CA</p>
+            <p><strong>Type:</strong> Full-time</p>
+            <p><strong>Description:</strong> TechCorp is looking for a passionate software engineer to join our team. Responsibilities include developing and maintaining software solutions, collaborating with cross-functional teams, and ensuring high-quality deliverables.</p>
+            <p><strong>Requirements:</strong> Bachelor's degree in Computer Science or related field, 3+ years of experience in software development, proficiency in JavaScript and Python.</p>
+            <p><a href="#application">Apply Now</a></p>
+        </div>
+
+        <!-- Employer Dashboard -->
+        <div id="employer" class="section">
+            <h2>Employer Dashboard</h2>
+            <p><a href="#">Update Profile</a></p>
+            <p><a href="#">Post New Job</a></p>
+            <p><a href="#">View Posted Jobs</a></p>
+        </div>
+
+        <!-- Candidate Dashboard -->
+        <div id="candidate" class="section">
+            <h2>Candidate Dashboard</h2>
+            <p><a href="#">Update Profile</a></p>
+            <p><a href="#">View Applied Jobs</a></p>
+            <p><a href="#">Change Password</a></p>
+        </div>
+
+        <!-- Job Application Process -->
+        <div id="application" class="section">
+            <h2>Job Application</h2>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="resume">Upload Resume</label>
+                <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" required>
+
+                <label for="cover-letter">Cover Letter</label>
+                <textarea id="cover-letter" name="cover-letter" rows="6" required></textarea>
+
+                <input type="submit" value="Apply Now">
+            </form>
+        </div>
+
+        <!-- Search Functionality -->
+        <div id="search" class="section">
+            <h2>Search for Jobs</h2>
+            <div class="search-container">
+                <input type="search" placeholder="Search for jobs...">
+                <button>Search</button>
+            </div>
+        </div>
+
+        <!-- User Authentication -->
+        <div id="login" class="section">
+            <h2>Login</h2>
+            <form action="#" method="post">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <input type="submit" value="Login">
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Job Portal. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Show home section by default
+        showSection('home');
+    </script>
+</body>
+</html>
